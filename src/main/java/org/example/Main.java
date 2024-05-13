@@ -1,5 +1,6 @@
 package org.example;
 
+import java.math.BigInteger;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
@@ -43,5 +44,13 @@ public class Main {
         });
 
         System.out.println(helloFun.thenCombine(worldFun,(m,w)->m+w).get());
+    }
+
+    private static BigInteger calculateFactorial(BigInteger num) {
+        BigInteger result = BigInteger.ONE;
+        for (BigInteger i = BigInteger.ONE; i.compareTo(num) <= 0; i = i.add(BigInteger.ONE)) {
+            result = result.multiply(i);
+        }
+        return result;
     }
 }

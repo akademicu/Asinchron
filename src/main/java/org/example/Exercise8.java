@@ -20,7 +20,8 @@ public class Exercise8 {
                     try {
                         TimeUnit.SECONDS.sleep(5);
                     } catch (InterruptedException ignore) {}
-                    System.out.println(calculateFactorial(numbers.get(finalI)));
+                    System.out.println("Thread:" + Thread.currentThread().getName() + "(" + calculateFactorial(numbers.get(finalI)) + ")");
+                    System.out.println();
                 });
             }
             System.out.println("Looped them all");
